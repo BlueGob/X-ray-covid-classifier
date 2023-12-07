@@ -32,7 +32,7 @@ function App() {
           </div>
 
           <div className="p-col-12 p-md-6 p-lg-6">
-            <Card title="Classification Results" className="card">
+            <Card title="" className="card">
               <div className="content">
                 <ClassificationComponent toast={toast} />
               </div>

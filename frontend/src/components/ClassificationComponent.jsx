@@ -37,22 +37,21 @@ const ClassificationComponent = () => {
             onClick={handleButtonClick}
             disabled={loading}
             icon={loading ? 'pi pi-spin pi-spinner' : 'pi pi-send'}
-            className="p-button-sm p-button-rounded p-button-outlined"
+            className="p-button-rounded p-button-outlined"
+            style={{
+              width: '20%',
+            }}
           />
         </div>
       </div>
       
       <Messages ref={messages} />
 
-      {loading && (
-        <ProgressSpinner style={{ width: '50px', height: '50px' }} strokeWidth="8" />
-      )}
-
       {classificationData && !loading && (
-        <>
+        <Card title="Classification Results">
           <h3 className="p-m-0" style={{ fontWeight: 'bold' }}>Class: {classificationData.class_}</h3>
           <h3>Confidence: {(100 * classificationData.confidence).toFixed(2)} %</h3>
-        </>
+        </Card>
       )}
 
       {error && (

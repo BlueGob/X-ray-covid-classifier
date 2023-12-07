@@ -3,6 +3,7 @@
   display: flex;      /* Enables flexbox */
   justify-content: center; /* Centers horizontally */
   margin-top: 20px;
+  /* margin-bottom: 20px; */
 }
 
 body {
@@ -19,6 +20,7 @@ body {
 .card {
   max-width: 1200px;
   min-width: 900px;
+  /* padding: 0px; */
 }
 
 

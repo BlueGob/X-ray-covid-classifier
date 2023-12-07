@@ -77,13 +77,21 @@ const ImageUpload = () => {
           setCurrentFile(undefined);
         }}
         style={{ width: "90%" }}
+        pt={{
+          chooseButton: {
+            className: "p-button-success",
+          },
+          cancelButton: {
+            root: { className: "p-button-danger" },
+          },
+        }}
         emptyTemplate={
           <p className="m-0">Drag and drop files to here to upload.</p>
         }
       />
 
       {previewImage && (
-        <Card title="Preview" style={{width: '90%', marginTop: "20px"}}>
+        <Card title="Preview" style={{ width: "90%", marginTop: "20px" }}>
           <img
             className="preview"
             src={previewImage}
