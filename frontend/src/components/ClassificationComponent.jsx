@@ -46,12 +46,14 @@ const ClassificationComponent = () => {
       </div>
       
       <Messages ref={messages} />
-
+          
+      <div style={{ height: '50px'}} />
       {classificationData && !loading && (
-        <Card title="Classification Results">
-          <h3 className="p-m-0" style={{ fontWeight: 'bold' }}>Class: {classificationData.class_}</h3>
-          <h3>Confidence: {(100 * classificationData.confidence).toFixed(2)} %</h3>
-        </Card>
+        <div>
+          <h3 className="p-card-title">Classification Results</h3>
+          <p className="p-m-0" style={{fontSize: '20px'}}> <span style={{ fontWeight: 'bold' }}>Class:</span> {classificationData.class_}</p>          
+          <p className="p-m-0" style={{fontSize: '20px'}}> <span style={{ fontWeight: 'bold' }}>Confidence:</span> {(100 * classificationData.confidence).toFixed(2)} %</p>         
+        </div>
       )}
 
       {error && (
