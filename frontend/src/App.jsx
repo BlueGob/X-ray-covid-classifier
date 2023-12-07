@@ -5,12 +5,7 @@ import ClassificationComponent from "./components/ClassificationComponent";
 import ImageUpload from "./components/ImageUpload";
 import "./App.css"; // Import a CSS file for custom styles
 import 'primeicons/primeicons.css';                        //icons
-
-//theme
-import "primereact/resources/themes/lara-light-indigo/theme.css";     
-    
-//core
-import "primereact/resources/primereact.min.css";                                       
+import "primereact/resources/themes/lara-light-cyan/theme.css";
         
 function App() {
   const toast = useRef(null);
@@ -28,7 +23,7 @@ function App() {
             ></Card>
           </div>
 
-          <div className="">
+          <div className="p-col-12 p-md-6 p-lg-6">
             <Card title="Upload X-Ray Image" className="card">
               <div className="content">
                 <ImageUpload toast={toast} />

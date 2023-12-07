@@ -2,7 +2,7 @@ import http from "../http-common";
 
 const upload = (file, onUploadProgress) => {
   let formData = new FormData();
-
+  console.log("FileUploadService.js: upload: file:", file);
   formData.append("file", file);
 
   return http.post("/upload", formData, {

@@ -7428,10 +7428,10 @@ primeicons@^6.0.1:
   resolved "https://registry.npmjs.org/primeicons/-/primeicons-6.0.1.tgz"
   integrity sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==
 
-primereact@^9.6.3:
-  version "9.6.4"
-  resolved "https://registry.npmjs.org/primereact/-/primereact-9.6.4.tgz"
-  integrity sha512-jW5t1Ct1coMGi1e+GWyLgVmxHQpEGtP3Pu2S/zsX8/yUgzDvn/ef0gaQ8l9/gihSnt/n4z4lFsHmn8Vb3j89yg==
+primereact@^10.2.1:
+  version "10.2.1"
+  resolved "https://registry.npmjs.org/primereact/-/primereact-10.2.1.tgz"
+  integrity sha512-F25053E1z+fod6V7AJ1Ix/DwSPkFQotk2+Idm0XkFsN+gQEywH7DgtbvNKpUA+LEq48h2+/WVK3D0V8IAm1Npg==
   dependencies:
     "@types/react-transition-group" "^4.4.1"
     react-transition-group "^4.4.1"

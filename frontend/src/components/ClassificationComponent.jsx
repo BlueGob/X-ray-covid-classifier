@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { Messages } from 'primereact/messages';
+import { Card } from 'primereact/card';
 
 const ClassificationComponent = () => {
   const [classificationData, setClassificationData] = useState(null);
@@ -28,33 +29,38 @@ const ClassificationComponent = () => {
   };
 
   return (
-    <div>
-      <div className='row'>
+    <div className="p-m-3">
+      <div className="row">
         <div className='col-4'>
           <Button 
             label={loading ? 'Loading...' : 'Send'} 
             onClick={handleButtonClick}
-            // className="p-button-success p-button-sm"
             disabled={loading}
-            icon={loading ? 'pi pi-spin pi-spinner' : null}
+            icon={loading ? 'pi pi-spin pi-spinner' : 'pi pi-send'}
+            className="p-button-sm p-button-rounded p-button-outlined"
           />
         </div>
       </div>
       
       <Messages ref={messages} />
 
+      {loading && (
+        <ProgressSpinner style={{ width: '50px', height: '50px' }} strokeWidth="8" />
+      )}
+
       {classificationData && !loading && (
-        <div>
-          <p>Class: {classificationData.class_}</p>
-          <p>Confidence: {classificationData.confidence}%</p>
-        </div>
+        <>
+          <h3 className="p-m-0" style={{ fontWeight: 'bold' }}>Class: {classificationData.class_}</h3>
+          <h3>Confidence: {(100 * classificationData.confidence).toFixed(2)} %</h3>
+        </>
+      )}
+
+      {error && (
+        <Card title="Error" style={{ borderColor: '#ff0000', color: '#ff0000' }}>
+          <p>{error}</p>
+        </Card>
       )}
       
-      {loading && (
-        <div>
-          <ProgressSpinner />
-        </div>
-      )}
     </div>
   );
 };
