@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 from model_test import classify
+from resize import resize_images
 
 def empty_folder(folder_path):
     # Get a list of all files in the folder
@@ -68,7 +69,9 @@ async def get_uploaded_files():
 @app.get("/classify")
 async def model_classify():
     try:
-        # model call
+        # resize file
+        resize_images(upload_dir, upload_dir, (256, 256))
+        
         files = os.listdir(upload_dir)
         ret = classify(files[0])
         return JSONResponse(content={
