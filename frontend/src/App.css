@@ -1,0 +1,21 @@
+body {
+  background-color: #333 !important; /* You can use any dark color code you prefer */
+  color: #fff !important; /* Set text color to white or a contrasting color for better readability on dark background */
+}
+
+.container{
+  width: 500px !important;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  margin: 20px 0;
+}
+
+.preview {
+  max-width: 200px;
+}

@@ -1,18 +1,18 @@
-import tensorflow as tf
+import tensorflow as tfpyth
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
-        '/your/train/directory/',  # train directory path
+        'C:\\Users\\achrafoo\\Documents\\train',  # train directory path
         target_size=(256, 256),
         batch_size=32,
         class_mode='categorical')
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 validation_generator = test_datagen.flow_from_directory(
-        '/your/test/directory/',  # test directory path
+        'C:\\Users\\achrafoo\\Documents\\validation',  # test directory path
         target_size=(256, 256),
         batch_size=32,
         class_mode='categorical')
@@ -36,9 +36,9 @@ model = Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 history = model.fit(
       train_generator,
-      steps_per_epoch=50,  # depends on your dataset
+      steps_per_epoch=100,  
       epochs=4,
       validation_data=validation_generator,
-      validation_steps=50)  # depends on your test dataset
+      validation_steps=30)  
 model.save('covid_pneumonia_classification_model.h5')
 
